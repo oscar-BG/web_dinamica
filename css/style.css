@@ -1,0 +1,15 @@
+body{
+    background-color: #F1F2DE;
+    margin: 100px 0px 0px 0px;
+}
+
+section{
+    text-align: center;
+    background-color: #90DDC7;
+    border: 10px solid #006494;
+    padding: 60px 10px 60px;
+    margin: auto 30%;
+}
+#h1-titulo{
+    font-family: 'Press Start 2P', cursive;
+}
