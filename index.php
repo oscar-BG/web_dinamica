@@ -13,7 +13,7 @@
     <div class="div">
         <section>
             <h1 id="h1-titulo">GAME MINI</h1>
-            <form action="" method="POST">
+            <form action="login.php" method="POST">
                 <label>Nombre de Usuario</label>
                 <br>
                 <input type="text" name="usuario">
@@ -21,7 +21,13 @@
                 <label>Contraseña</label>
                 <br>
                 <input type="password" name="password">
+                <br>
+                <br>
+                <input type="submit" name="enviar">
                 </form>
+                <?php
+                
+                ?>
         </section>
     </div>
 </body>
