@@ -1,15 +1,32 @@
-body{
-    background-color: #F1F2DE;
-    margin: 100px 0px 0px 0px;
+h1{
+    color: #1d3556;
 }
-
-section{
+ul{
+    list-style-type: none;
+    background-color: #457b9d;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: white;
     text-align: center;
-    background-color: #90DDC7;
-    border: 10px solid #006494;
-    padding: 60px 10px 60px;
-    margin: auto 30%;
+    padding: 15px;
+    text-decoration: none;
 }
-#h1-titulo{
-    font-family: 'Press Start 2P', cursive;
+li a:hover{
+    background-color: #1d3557;
+}
+header{
+    border: 1px solid black;
+    margin: 20px;
+    text-align: center;
+}
+section{
+    text-align: justify;
+    padding: 20px;
 }
