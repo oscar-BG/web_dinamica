@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/login.css" rel="stylesheet">
+    <title>Registrarse</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="">
+            <h1>Registrar</h1>
+            <p>Ingrese sus datos</p>
+            <br>
+            <br>
+            <input type="text" id="usu_nom" name="usu_nom"  placeholder="Ingrese nombre y apellido">
+            <input type="email" id="usu_correo" name="usu_correo" placeholder="Ingreso correo electronico">
+            <input type="password" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña">
+            <input type="password" id="usu_pass1" name="usu_pass1" placeholder="Repita contraseña">
+            <button type="button"  id="btnregistrar">Iniciar Sesion</button>
+            <br>
+            <!--Accesso con email-->
+            <div class="divGmail">
+                <a href="#" id="btnloging">
+                    <span>Iniciar session con Gmail</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    
+    <script src="registrar.js"></script>
+</body>
+</html>
