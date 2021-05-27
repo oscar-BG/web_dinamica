@@ -26,6 +26,7 @@ $(document).on("click", "#btnregistrar", function(){
                 console.log(data);
                 if(data == 0){
                     alert("Registro exitoso");
+                    window.open('../index.html','_self');
                 }else{
                     alert("Correo ya existe");
                 }

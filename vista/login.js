@@ -1,3 +1,29 @@
+var config={
+    apiKey: "AIzaSyD3YWrEPx_axuulMxk0j071FyTow1-pXsw",
+    authDomain: "login-921f2.firebaseapp.com",
+    projectId: "login-921f2",
+    storageBucket: "login-921f2.appspot.com",
+    messagingSenderId: "550974378168",
+    appId: "1:550974378168:web:46fe9806e8119c977c644d",
+    measurementId: "G-HECLVGCXR0"
+}
+
+firebase.initializeApp(config);
+firebase.analytics();
+
+var auth = firebase.auth();
+
+document.getElementById('btnloging').addEventListener('click',function(){
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    auth.signInWithPopup(provider)
+        .then(function(result){
+            var user = result.user;
+            console.log(user);
+        }).catch(function(error){
+            console.log(error);
+        });
+});
 function init(){
 
 }
