@@ -15,15 +15,32 @@ var auth = firebase.auth();
 
 document.getElementById('btnloging').addEventListener('click',function(){
     var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     auth.signInWithPopup(provider)
         .then(function(result){
             var user = result.user;
-            console.log(user);
+            console.log(result.user);
+            console.log(result.user.providerData[0].displayName);
+            console.log(result.user.providerData[0].email);
+            console.log(result.user.providerData[0].photoURL);
+
+            $.post("../controlador/usuarioC.php?op=accesosocial",{usu_correo:result.user.providerData[0].email},function(data){
+                data = JSON.parse(data);
+                console.log(data);
+                if(data == 0){
+                    alert("Usuario No registrado");
+                    
+                }else{
+                    window.open('../index.html','_self');
+                }
+            });
         }).catch(function(error){
             console.log(error);
         });
 });
+
 function init(){
 
 }

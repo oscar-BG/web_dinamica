@@ -13,6 +13,15 @@
                 echo json_encode("Error");
             }
         break;
+        case "accesosocial":
+            $datos = $usuario->get_login_social($_POST["usu_correo"]);
+            if(is_array($datos) == true and count($datos)>0){
+                echo json_encode($datos);
+                echo json_encode("1");
+            }else{
+                echo json_encode("0");
+            }
+        break;
         case "registro":
 
             $datos= $usuario->get_email($_POST["usu_correo"]);

@@ -11,6 +11,15 @@ require_once "conexionBD.php";
             return $pdo ->fetchAll();
             $pdo -> close();
         }
+        #funcion para obtener correo
+        public function get_login_social($usu_correo){
+            $pdo = Conexion::cBD()->prepare("select usu_correo from tm_usuario where usu_correo = :usu_correo");
+            $pdo -> bindParam("usu_correo", $usu_correo, PDO::PARAM_STR);
+
+            $pdo -> execute();
+            return $pdo ->fetchAll();
+            $pdo -> close();
+        }
         #Registrar usuario
         static public function insert_login($usu_nom, $usu_correo, $usu_pass){
             $pdo = Conexion::cBD()->prepare("call insert_tmusuario(:nombre, :correo, :pass)");
