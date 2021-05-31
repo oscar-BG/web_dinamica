@@ -31,7 +31,12 @@
                 $usuario->insert_login($_POST["usu_nom"], $_POST["usu_correo"], $_POST["usu_pass"]);
                 echo "0";
             } 
-            
+        break;
+        case "comentar":
+            $datos = $usuario->create_comment($_POST["comendarios"]);
+            if(is_array($datos) == true and count($datos)>0){
+                echo "1";
+            }
         break;
     }
 ?>

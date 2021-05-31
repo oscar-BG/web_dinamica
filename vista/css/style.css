@@ -30,3 +30,13 @@ section{
     text-align: justify;
     padding: 20px;
 }
+section .comentarios{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px;
+}
+section .comentarios form{
+    display:block;
+}

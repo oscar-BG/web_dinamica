@@ -37,6 +37,15 @@ require_once "conexionBD.php";
             $pdo -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
             $pdo -> execute();
             return $pdo -> fetchAll();
+            $pdo -> close();
+        }
+        #Publicar un comentario
+        public function create_comment($comendario){
+            $pdo = Conexion::cBD()->prepare("INSERT INTO comendarios (comendario) VALUES (:c);");
+            $pdo -> bindParam("c",$comendario, PDO::PARAM_STR);
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+            $pdo -> close();
         }
     }
 ?>
