@@ -2,7 +2,7 @@ function init(){
 
 }
 $(document).ready(function(){
-
+    
 });
 $(document).on("click", "#enviar", function(){
     console.log('click en el boton enviar');

@@ -47,5 +47,20 @@ require_once "conexionBD.php";
             return $pdo -> fetchAll();
             $pdo -> close();
         }
+        #contar el numero de comendarios
+        static public function count_comment(){
+            $pdo = Conexion::cBD()->prepare('SELECT COUNT(comendario) as countC FROM comendarios;');
+            $pdo -> execute();
+            $result = $pdo -> fetch();
+            return $result;
+            $pdo -> close();
+        }
+        #Ver commentarios
+        static public function viewComment(){
+            $pdo = Conexion::cBD()->prepare("SELECT comendario FROM comendarios");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+            $pdo -> close();
+        }
     }
 ?>

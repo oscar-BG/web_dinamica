@@ -31,7 +31,6 @@ section{
     padding: 20px;
 }
 section .comentarios{
-    border: 2px solid black;
     border-radius: 5px;
     margin-right: auto;
     margin-left: auto;
@@ -39,4 +38,16 @@ section .comentarios{
 }
 section .comentarios form{
     display:block;
+}
+section .viewcomment{
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+    overflow: scroll;
+
+}
+section .viewcomment input{
+    display: block;
+    padding: 5px;
+    margin: 5px;
 }

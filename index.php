@@ -1,3 +1,6 @@
+<?php
+require_once 'controlador/comentarioC.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +40,12 @@
             COMENDARIOS
     ##################################-->
     <section>
+        <div class="viewcomment">
+            <?php
+                $view_comment = new ComentarioC();
+                $view_comment -> comentario();
+            ?>
+        </div>
         <div class="comentarios">
             <h2>Dejamos un comentario</h2>
             
