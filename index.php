@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'controlador/comentarioC.php';
 ?>
 <!DOCTYPE html>
@@ -16,7 +17,14 @@ require_once 'controlador/comentarioC.php';
             <li><a href="#">Inicio</a></li>
             <li><a href="#">blog</a></li>
             <li><a href="#">Articulos</a></li>
-            <li><a href="vista/login.html">Suscribete</a></li>
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<li><a>Bienvenido  '.$_SESSION['usuario'].'</a></li>';
+                    echo '<li><a href="controlador/usuarioC.php?op=session">Salir</a></li>';
+                }else{
+                    echo '<li><a href="vista/login.html">Suscribete</a></li>';
+                }
+            ?>
         </ul>
     </div>
     <header>
@@ -50,8 +58,13 @@ require_once 'controlador/comentarioC.php';
             <h2>Dejamos un comentario</h2>
             
             <textarea  id="comendarios" name="comendarios" rows="3" cols="30"></textarea>
-            <input type="submit" id="enviar" name="enviar" value="Comendar">
-            
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comendar">';
+                }else{
+                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comendar" disabled="true">';
+                } 
+            ?>
         </div>
     </section>
     <script src="vista/lib/jquery/jquery.js"></script>

@@ -1,23 +1,23 @@
 <?php
 require_once "conexionBD.php";
     class UsuarioM extends Conexion{
-
+        # funcion que consulta el correo electronico y contraseña
         public function get_login($usu_correo, $usu_pass){
-            $pdo = Conexion::cBD()->prepare("select usu_correo, usu_pass from tm_usuario where usu_correo = :usu_correo and usu_pass = :usu_pass");
+            $pdo = Conexion::cBD()->prepare("select usu_correo, usu_pass, usu_nom from tm_usuario where usu_correo = :usu_correo and usu_pass = :usu_pass");
             $pdo -> bindParam("usu_correo", $usu_correo, PDO::PARAM_STR);
             $pdo -> bindParam("usu_pass", $usu_pass, PDO::PARAM_STR);
 
             $pdo -> execute();
-            return $pdo ->fetchAll();
+            return $pdo ->fetch();
             $pdo -> close();
         }
         #funcion para obtener correo
         public function get_login_social($usu_correo){
-            $pdo = Conexion::cBD()->prepare("select usu_correo from tm_usuario where usu_correo = :usu_correo");
+            $pdo = Conexion::cBD()->prepare("select usu_correo, usu_nom from tm_usuario where usu_correo = :usu_correo");
             $pdo -> bindParam("usu_correo", $usu_correo, PDO::PARAM_STR);
 
             $pdo -> execute();
-            return $pdo ->fetchAll();
+            return $pdo ->fetch();
             $pdo -> close();
         }
         #Registrar usuario
@@ -40,9 +40,11 @@ require_once "conexionBD.php";
             $pdo -> close();
         }
         #Publicar un comentario
-        public function create_comment($comendario){
-            $pdo = Conexion::cBD()->prepare("INSERT INTO comendarios (comendario) VALUES (:c);");
+        public function create_comment($comendario, $usuario ){
+            $pdo = Conexion::cBD()->prepare("INSERT INTO comendarios (usuario, fecha, comendario) VALUES (:usu, NOW(), :c);");
             $pdo -> bindParam("c",$comendario, PDO::PARAM_STR);
+            $pdo -> bindParam("usu", $usuario, PDO::PARAM_STR);
+            
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close();
@@ -57,7 +59,7 @@ require_once "conexionBD.php";
         }
         #Ver commentarios
         static public function viewComment(){
-            $pdo = Conexion::cBD()->prepare("SELECT comendario FROM comendarios");
+            $pdo = Conexion::cBD()->prepare("SELECT usuario, fecha, comendario FROM comendarios");
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close();

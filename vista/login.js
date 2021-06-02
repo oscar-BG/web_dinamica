@@ -33,7 +33,7 @@ document.getElementById('btnloging').addEventListener('click',function(){
                     alert("Usuario No registrado");
                     
                 }else{
-                    window.open('../index.html','_self');
+                    window.open('../index.php','_self');
                 }
             });
         }).catch(function(error){
@@ -58,10 +58,10 @@ $(document).on("click", "#btnlogin", function(){
     }else{
         //uso de AJAX
         $.post("../controlador/usuarioC.php?op=acceso",{usu_correo:usu_correo,usu_pass:usu_pass},function(data){
-            data = JSON.parse(data);
+            //data = JSON.parse(data);
             console.log(data);
             if(data == 1){
-                window.open('../index.html','_self');
+                window.open('../index.php','_self');
             }else{
                 alert("Credenciales incorrectos");
             }

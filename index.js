@@ -4,7 +4,7 @@ function init(){
 $(document).ready(function(){
     
 });
-$(document).on("click", "#enviar", function(){
+$(document).on("click", "#enviar_comment", function(){
     console.log('click en el boton enviar');
     var comendarios = $('#comendarios').val();
     //console.log(comendarios);

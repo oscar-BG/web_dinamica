@@ -30,7 +30,7 @@ document.getElementById('btnloging').addEventListener('click',function(){
                 console.log(data);
                 if(data == 0){
                     alert("Registro exitoso");
-                    window.open('../index.html','_self');
+                    window.open('../index.php','_self');
                 }else{
                     alert("Correo ya existe");
                 }
@@ -66,7 +66,7 @@ $(document).on("click", "#btnregistrar", function(){
                 console.log(data);
                 if(data == 0){
                     alert("Registro exitoso");
-                    window.open('../index.html','_self');
+                    window.open('../index.php','_self');
                 }else{
                     alert("Correo ya existe");
                 }
