@@ -55,6 +55,9 @@ section .viewcomment span{
     font-family: initial;
     color: red;
 }
+section .viewcomment img{
+    width: 50px;
+}
 /*###############
     Publicar comentarios
 #################*/

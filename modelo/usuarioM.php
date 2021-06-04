@@ -21,10 +21,11 @@ require_once "conexionBD.php";
             $pdo -> close();
         }
         #Registrar usuario
-        static public function insert_login($usu_nom, $usu_correo, $usu_pass){
-            $pdo = Conexion::cBD()->prepare("call insert_tmusuario(:nombre, :correo, :pass)");
+        static public function insert_login($usu_nom, $usu_correo, $usu_foto,$usu_pass){
+            $pdo = Conexion::cBD()->prepare("call insert_tmusuario(:nombre, :correo, :foto, :pass)");
             $pdo -> bindParam("nombre", $usu_nom, PDO::PARAM_STR);
             $pdo -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
+            $pdo -> bindParam("foto", $usu_foto, PDO::PARAM_STR);
             $pdo -> bindParam("pass", $usu_pass, PDO::PARAM_STR);
 
             $pdo -> execute();

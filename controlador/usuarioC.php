@@ -5,6 +5,7 @@
     $usuario = new UsuarioM();
 
     switch($_GET["op"]){
+        #Login
         #Verificar si existe el usuario y crear su session
         case "acceso":
             $datos = $usuario->get_login($_POST["usu_correo"], $_POST["usu_pass"]);
@@ -19,6 +20,7 @@
                 echo '0';
             }
         break;
+        #Login
         #Verificar si el usuario existe por el login de gmail
         case "accesosocial":
             $datos = $usuario->get_login_social($_POST["usu_correo"]);
@@ -32,15 +34,18 @@
                 echo json_encode("0");
             }
         break;
+        #Registrar
         case "registro":
 
             $datos= $usuario->get_email($_POST["usu_correo"]);
             if(is_array($datos) == true and count($datos)>0){
+                //echo json_encode("1");
                 echo "1";
             }else{
-                $usuario->insert_login($_POST["usu_nom"], $_POST["usu_correo"], $_POST["usu_pass"]);
+                $usuario->insert_login($_POST["usu_nom"], $_POST["usu_correo"],$_POST["usu_foto"], $_POST["usu_pass"]);
                 $session = $_POST["usu_nom"];
                 $_SESSION['usuario'] = $session;
+                //echo json_encode("0");
                 echo "0";
             } 
         break;

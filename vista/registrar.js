@@ -25,7 +25,7 @@ document.getElementById('btnloging').addEventListener('click',function(){
             console.log(result.user.providerData[0].email);
             console.log(result.user.providerData[0].photoURL);
 
-            $.post("../controlador/usuarioC.php?op=registro",{usu_nom:result.user.providerData[0].displayName, usu_correo:result.user.providerData[0].email, usu_pass:123456},function(data){
+            $.post("../controlador/usuarioC.php?op=registro",{usu_nom:result.user.providerData[0].displayName, usu_correo:result.user.providerData[0].email, usu_foto:result.user.providerData[0].photoURL, usu_pass:123456},function(data){
                 data = JSON.parse(data);
                 console.log(data);
                 if(data == 0){
@@ -52,7 +52,7 @@ $(document).on("click", "#btnregistrar", function(){
     var usu_correo = $('#usu_correo').val();
     var usu_pass = $('#usu_pass').val();
     var usu_pass1 = $('#usu_pass1').val();
-
+    var usu_foto = 'https://image.freepik.com/vector-gratis/perfil-empresario-dibujos-animados_18591-58479.jpg';
     console.log(usu_nom)
     console.log(usu_correo);
     console.log(usu_pass);
@@ -61,8 +61,8 @@ $(document).on("click", "#btnregistrar", function(){
         alert("Campos vacios");
     }else{
         if(usu_pass == usu_pass1){
-            $.post("../controlador/usuarioC.php?op=registro",{usu_nom:usu_nom,usu_correo:usu_correo,usu_pass},function(data){
-                data = JSON.parse(data);
+            $.post("../controlador/usuarioC.php?op=registro",{usu_nom:usu_nom,usu_correo:usu_correo,usu_foto:usu_foto, usu_pass},function(data){
+                //data = JSON.parse(data);
                 console.log(data);
                 if(data == 0){
                     alert("Registro exitoso");
