@@ -12,8 +12,12 @@ require_once ("modelo/usuarioM.php");
                 echo '
                     <br>
                     <label> '.$value["usuario"].' </label>
-                    <label>'."publicada  ".''.$value["fecha"].'</label> <br>
+                    <label>'."<span>publicada </span> ".''.$value["fecha"].'</label> 
+                    <br>
+                    <br>
                     <textarea id="public_comment" name="public_comment"  rows="3"  cols="30" readonly="true">'.$value["comendario"].'</textarea>
+                    <br>
+                    <br>
                     ';
             }
             
