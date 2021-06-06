@@ -3,7 +3,7 @@ require_once "conexionBD.php";
     class UsuarioM extends Conexion{
         # funcion que consulta el correo electronico y contraseña
         public function get_login($usu_correo, $usu_pass){
-            $pdo = Conexion::cBD()->prepare("select usu_correo, usu_pass, usu_nom from tm_usuario where usu_correo = :usu_correo and usu_pass = :usu_pass");
+            $pdo = Conexion::cBD()->prepare("select usu_correo, usu_pass, usu_nom, est from tm_usuario where usu_correo = :usu_correo and usu_pass = :usu_pass");
             $pdo -> bindParam("usu_correo", $usu_correo, PDO::PARAM_STR);
             $pdo -> bindParam("usu_pass", $usu_pass, PDO::PARAM_STR);
 

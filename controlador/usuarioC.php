@@ -10,13 +10,18 @@
         case "acceso":
             $datos = $usuario->get_login($_POST["usu_correo"], $_POST["usu_pass"]);
             if(count($datos)>0){
-                $session_email = $datos['usu_correo'];
-                $session = $datos['usu_nom'];
-                $_SESSION['usuario'] = $session;
-                $_SESSION['correo'] = $session_email;
-                #echo json_encode($datos);
-                #echo json_encode("1");
-                echo '1';
+                if ($datos["est"] == 1) {
+                    # code...
+                    $session_email = $datos['usu_correo'];
+                    $session = $datos['usu_nom'];
+                    $_SESSION['usuario'] = $session;
+                    $_SESSION['correo'] = $session_email;
+                    #echo json_encode($datos);
+                    #echo json_encode("1");
+                    echo '1';
+                }else{
+                    echo '2';
+                }
             }else{
                 #echo json_encode("0");
                 echo '0';

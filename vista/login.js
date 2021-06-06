@@ -62,7 +62,10 @@ $(document).on("click", "#btnlogin", function(){
             console.log(data);
             if(data == 1){
                 window.open('../index.php','_self');
-            }else{
+            }else if(data == 2){
+                alert("Lo sentimos usuario inactivo");
+            }
+            else{
                 alert("Credenciales incorrectos");
             }
         });
