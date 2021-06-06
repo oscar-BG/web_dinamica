@@ -61,9 +61,9 @@ require_once 'controlador/comentarioC.php';
             <textarea  id="comendarios" name="comendarios" rows="3" cols="30"></textarea>
             <?php
                 if(isset($_SESSION['usuario'])){
-                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comendar">';
+                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comentar">';
                 }else{
-                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comendar" disabled="true">';
+                    echo '<input type="submit" id="enviar_comment" name="enviar_comment" value="Comentar" disabled="true">';
                 } 
             ?>
         </div>

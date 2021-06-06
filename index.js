@@ -15,6 +15,7 @@ $(document).on("click", "#enviar_comment", function(){
         $.post("/controlador/usuarioC.php?op=comentar",{comendarios:comendarios},function(data){
             /*data = JSON.parse(data);*/
             console.log(data);
+            location.reload();
         });
     }
 });

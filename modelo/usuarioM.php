@@ -41,10 +41,11 @@ require_once "conexionBD.php";
             $pdo -> close();
         }
         #Publicar un comentario
-        public function create_comment($comendario, $usuario ){
-            $pdo = Conexion::cBD()->prepare("INSERT INTO comendarios (usuario, fecha, comendario) VALUES (:usu, NOW(), :c);");
-            $pdo -> bindParam("c",$comendario, PDO::PARAM_STR);
+        public function create_comment($comendario, $usuario, $correo){
+            $pdo = Conexion::cBD()->prepare("INSERT INTO comendarios (usuario, usu_correo, fecha, comendario) VALUES (:usu, :correo,  NOW(), :c);");
             $pdo -> bindParam("usu", $usuario, PDO::PARAM_STR);
+            $pdo -> bindParam("correo", $correo, PDO::PARAM_STR);
+            $pdo -> bindParam("c",$comendario, PDO::PARAM_STR);
             
             $pdo -> execute();
             return $pdo -> fetchAll();
@@ -60,7 +61,7 @@ require_once "conexionBD.php";
         }
         #Ver commentarios
         static public function viewComment(){
-            $pdo = Conexion::cBD()->prepare("SELECT usuario, fecha, comendario FROM comendarios");
+            $pdo = Conexion::cBD()->prepare("SELECT usuario, fecha, comendario, foto FROM comendarios INNER JOIN tm_usuario ON tm_usuario.usu_correo = comendarios.usu_correo ORDER BY fecha DESC;");
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close();

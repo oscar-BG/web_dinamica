@@ -10,8 +10,10 @@
         case "acceso":
             $datos = $usuario->get_login($_POST["usu_correo"], $_POST["usu_pass"]);
             if(count($datos)>0){
+                $session_email = $datos['usu_correo'];
                 $session = $datos['usu_nom'];
                 $_SESSION['usuario'] = $session;
+                $_SESSION['correo'] = $session_email;
                 #echo json_encode($datos);
                 #echo json_encode("1");
                 echo '1';
@@ -26,8 +28,10 @@
             $datos = $usuario->get_login_social($_POST["usu_correo"]);
             $e = $datos["usu_nom"];
             if(count($datos)>0){
+                $session_email = $datos['usu_correo'];
                 $session = $datos['usu_nom'];
                 $_SESSION['usuario'] = $session;
+                $_SESSION['correo'] = $session_email;
                 #echo json_encode($datos);
                 echo json_encode("1");
             }else{
@@ -44,14 +48,16 @@
             }else{
                 $usuario->insert_login($_POST["usu_nom"], $_POST["usu_correo"],$_POST["usu_foto"], $_POST["usu_pass"]);
                 $session = $_POST["usu_nom"];
+                $session_email = $_POST["usu_correo"];
                 $_SESSION['usuario'] = $session;
+                $_SESSION['correo'] = $session_email;
                 //echo json_encode("0");
                 echo "0";
             } 
         break;
         # INSERTAR COMENTARIOS EN LA TABLA
         case "comentar":
-            $datos = $usuario->create_comment($_POST["comendarios"], $_SESSION["usuario"]);
+            $datos = $usuario->create_comment($_POST["comendarios"], $_SESSION["usuario"], $_SESSION['correo']);
             if(is_array($datos) == true and count($datos)>0){
                 echo "1";
             }

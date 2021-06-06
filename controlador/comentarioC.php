@@ -11,7 +11,7 @@ require_once ("modelo/usuarioM.php");
             foreach ($result as $key => $value) {
                 echo '
                     <br>
-                    <label><img src="https://image.freepik.com/vector-gratis/perfil-empresario-dibujos-animados_18591-58479.jpg"></label>
+                    <label><img src="'.$value["foto"].'"></label>
                     <label> '.$value["usuario"].' </label>
                     <label>'."<span>publicada </span> ".''.$value["fecha"].'</label> 
                     <br>
