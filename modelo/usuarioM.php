@@ -27,10 +27,16 @@ require_once "conexionBD.php";
             $pdo -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
             $pdo -> bindParam("foto", $usu_foto, PDO::PARAM_STR);
             $pdo -> bindParam("pass", $usu_pass, PDO::PARAM_STR);
+            
+            $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),:correo,0)");
+            $pdoU -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
 
             $pdo -> execute();
+            $pdoU -> execute();
             return $pdo ->fetchAll();
             $pdo -> close();
+            $pdoU -> close();
+
         }
         #Verificar si existe correo
         static public function get_email($usu_correo){
@@ -65,6 +71,12 @@ require_once "conexionBD.php";
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close();
+        }
+        #Contar numero de visitas
+        static public function contarVistasM($_usuario){
+            $pdo = Conexion::cBD()->prepare("UPDATE estadistica SET view= (view +1) WHERE user=:correo");
+            $pdo -> bindParam(":correo",$_usuario, PDO::PARAM_STR);
+            $pdo -> execute();
         }
     }
 ?>

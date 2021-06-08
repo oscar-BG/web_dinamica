@@ -1,6 +1,15 @@
 <?php
 session_start();
 require_once 'controlador/comentarioC.php';
+require_once 'controlador/estadistica.php';
+    if(!isset($_SESSION["usuario"])){
+        $anonimo = "anonimo@gmail.com";
+        $estadistica = new EstadisticaC();
+        $estadistica -> contarVistasC($anonimo);
+    }else{
+        $estadistica = new EstadisticaC();
+        $estadistica -> contarVistasC($_SESSION['correo']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +22,9 @@ require_once 'controlador/comentarioC.php';
     <title>Document</title>
 </head>
 <body>
+    <!--############################## 
+            Menu
+     ################################-->
     <div class="divMenu">
         <ul>
             <li><a href="#">Inicio</a></li>
