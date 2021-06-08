@@ -28,7 +28,7 @@ require_once "conexionBD.php";
             $pdo -> bindParam("foto", $usu_foto, PDO::PARAM_STR);
             $pdo -> bindParam("pass", $usu_pass, PDO::PARAM_STR);
             
-            $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),:correo,0)");
+            $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, day, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),DAY(NOW()),:correo,0)");
             $pdoU -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
 
             $pdo -> execute();
@@ -74,9 +74,21 @@ require_once "conexionBD.php";
         }
         #Contar numero de visitas
         static public function contarVistasM($_usuario){
-            $pdo = Conexion::cBD()->prepare("UPDATE estadistica SET view= (view +1) WHERE user=:correo");
-            $pdo -> bindParam(":correo",$_usuario, PDO::PARAM_STR);
-            $pdo -> execute();
+            $pdo_fecha = Conexion::CBD()->prepare("SELECT year, moth, day FROM estadistica WHERE year=YEAR(NOW()) AND moth = MONTH(NOW()) AND day=DAY(NOW()) AND user=:correo");
+            $pdo_fecha -> bindParam("correo", $_usuario, PDO::PARAM_STR);
+            $pdo_fecha -> execute();
+            if($pdo_fecha -> rowCount() > 0){
+
+                $pdo = Conexion::cBD()->prepare("UPDATE estadistica SET view= (view +1) WHERE user=:correo AND day=DAY(NOW())");
+                $pdo -> bindParam(":correo",$_usuario, PDO::PARAM_STR);
+                $pdo -> execute();
+            }else{
+                $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, day, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),DAY(NOW()),:correo,0)");
+                $pdoU -> bindParam("correo", $_usuario, PDO::PARAM_STR);
+                $pdoU -> execute();
+            }
+
+            
         }
     }
 ?>
