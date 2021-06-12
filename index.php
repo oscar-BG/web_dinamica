@@ -45,7 +45,7 @@ require_once 'controlador/estadistica.php';
                 Informacion
     ################################# -->
     <div class="divImg">
-        <img src="vista/imagenes/k1.png"width="80%">
+        <img src="vista/imagenes/k1.png">
     </div>
     <div class="divConten">
         <p>
