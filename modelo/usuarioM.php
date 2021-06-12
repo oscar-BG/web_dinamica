@@ -28,7 +28,7 @@ require_once "conexionBD.php";
             $pdo -> bindParam("foto", $usu_foto, PDO::PARAM_STR);
             $pdo -> bindParam("pass", $usu_pass, PDO::PARAM_STR);
             
-            $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, day, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),DAY(NOW()),:correo,0)");
+            $pdoU = Conexion::cBD()->prepare("INSERT INTO estadistica(year, moth, day, user, view) VALUES (YEAR(NOW()),MONTH(NOW()),DAY(NOW()),:correo,1)");
             $pdoU -> bindParam("correo", $usu_correo, PDO::PARAM_STR);
 
             $pdo -> execute();

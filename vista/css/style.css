@@ -30,6 +30,67 @@ section{
     text-align: justify;
     padding: 20px;
 }
+/* #################
+    Informacion de la pagina 
+#####################*/
+
+.divImg{
+    width: 1000px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+}
+.divImg img{
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divConten{
+    color:black ;
+    font-family:212 Orion Sans;
+    text-align: left;
+    font-size:14pt;
+    text-align: justify;
+    overflow: hidden;
+}
+.sectionT{
+    background:#EAEDED;
+    overflow: hidden;
+}
+
+.divConten h2{
+    color:black ;
+    font-family:Please write me a song;
+    text-align: center;
+    font-size:30pt;
+}
+.divTablero{
+    width:100%;
+    height: auto;
+}
+.divInfo1{
+    float: left;
+    width: 45%;
+    height: auto;
+    padding: 5px;
+}
+.divInfo2{
+    float: left;
+    width: 45%;
+    height: auto;
+    padding: 5px;
+}
+.divInfo3{
+    float: left;
+    width: 50%;
+    height: auto;
+}
+.divInfo4{
+    float: left;
+    width: 50%;
+    height: auto;
+}
 /*###############
     Ver comentarios
 #################*/
@@ -39,7 +100,7 @@ section .viewcomment{
     border: 1px solid black;
     overflow: scroll;
     padding-left: 30px;
-
+    margin-top: 50px;
 }
 section .viewcomment input{
     display: block;
