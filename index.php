@@ -19,6 +19,7 @@ require_once 'controlador/estadistica.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="vista/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -92,6 +93,9 @@ require_once 'controlador/estadistica.php';
             ?>
         </div>
     </section>
+    <?php
+        include_once "vista/piePagina.html"; 
+    ?>
     <script src="vista/lib/jquery/jquery.js"></script>
     <script src="index.js"></script>
 </body>
