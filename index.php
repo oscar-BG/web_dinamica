@@ -29,7 +29,7 @@ require_once 'controlador/estadistica.php';
         <ul>
             <li><a href="index.php?menu=inicio">Inicio</a></li>
             <li><a href="index.php?menu=twice">Twice</a></li>
-            <li><a href="#">BTS</a></li>
+            <li><a href="index.php?menu=bts">BTS</a></li>
             <li><a href="#">Black PINK</a></li>
             <?php
                 if(isset($_SESSION['usuario'])){
@@ -54,6 +54,9 @@ require_once 'controlador/estadistica.php';
                     break;
                 case 'twice':
                     include_once "vista/twice.html";
+                    break;
+                case 'bts':
+                    include_once "vista/bts.html";
                     break;
                 default:
                     include_once "vista/inicio.html";

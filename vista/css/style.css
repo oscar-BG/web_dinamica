@@ -87,14 +87,40 @@ section{
 }
 .divInfo3{
     float: left;
-    width: 50%;
+    width: 45%;
     height: auto;
+    padding: 5px;
 }
 .divInfo4{
     float: left;
-    width: 50%;
+    width: 45%;
     height: auto;
+    padding: 5px;
 }
+/* ############
+    Musica
+################ */
+#sectionMusica{
+    border:10px solid #6fffe9;
+    font-family: 'Sniglet', cursive;
+    font-size: 20px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+#artista{
+    float: left;
+    width: 45%;
+    height: auto;
+    padding: 5px;
+}
+#musica{
+    float: right;
+    width: 45%;
+    height: auto;
+    padding: 5px;
+}
+
 /* RESPONSIVE */
 @media(max-width:600px){
     .divInfo1{
@@ -110,6 +136,14 @@ section{
         height: auto;
     }
     .divInfo4{
+        width: 100%;
+        height: auto;
+    }
+    #artista{
+        width: 100%;
+        height: auto;
+    }
+    #musica{
         width: 100%;
         height: auto;
     }
