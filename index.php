@@ -30,7 +30,7 @@ require_once 'controlador/estadistica.php';
             <li><a href="index.php?menu=inicio">Inicio</a></li>
             <li><a href="index.php?menu=twice">Twice</a></li>
             <li><a href="index.php?menu=bts">BTS</a></li>
-            <li><a href="#">Black PINK</a></li>
+            <li><a href="index.php?menu=blackpink">Black PINK</a></li>
             <?php
                 if(isset($_SESSION['usuario'])){
                     echo '<li><a>Bienvenido  '.$_SESSION['usuario'].'</a></li>';
@@ -57,6 +57,9 @@ require_once 'controlador/estadistica.php';
                     break;
                 case 'bts':
                     include_once "vista/bts.html";
+                    break;
+                case 'blackpink':
+                    include_once "vista/blackPink.html";
                     break;
                 default:
                     include_once "vista/inicio.html";
