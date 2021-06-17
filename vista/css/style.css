@@ -1,6 +1,10 @@
 body{
     padding: 5px;
 }
+p{
+    font-family: 'Handlee', cursive;
+    font-size: x-large;
+}
 /* ##############
     Menu
 ################ */
@@ -32,7 +36,28 @@ body{
 /* #################
     Informacion de la pagina 
 #####################*/
-
+.center{
+    text-align: center;
+}
+.divHeader{
+    text-align: center;
+    border: 10px dashed #06d6a0;
+    border-radius: 5px;
+    margin: 10px;
+}
+.divHeader h1{
+    color: #fec5bb;
+    font-family: 'Kalam', cursive;
+    font-size:xx-large;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px #f8edeb;
+}
+.divTitulo{
+    border-top: 10px solid #06d6a0;
+    border-bottom: 10px solid #06d6a0;
+    text-align: center;
+    font-family: 'Skranji', cursive;
+}
 .divImg{
     width: 100%;
     margin-top: 20px;
@@ -48,14 +73,15 @@ body{
 }
 .divConten{
     color:black ;
-    font-family:212 Orion Sans;
+    font-family: 'Handlee', cursive;
+    font-size: x-large;
     text-align: left;
     font-size:14pt;
     text-align: justify;
     overflow: hidden;
 }
 .sectionT{
-    background:#EAEDED;
+    background: #fadde1;
     overflow: hidden;
 }
 
@@ -68,6 +94,8 @@ body{
 .divTablero{
     width:100%;
     height: auto;
+    font-family: 'Handlee', cursive;
+    font-size: x-large;
 }
 .divInfo1{
     float: left;
@@ -108,6 +136,7 @@ body{
     background-attachment:inherit;
     background-position: top center;
     padding-left: 10px;
+    font-weight: bold;
 }
 #artista{
     float: left;
@@ -185,6 +214,9 @@ section .viewcomment{
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: x-large;
 }
 section .viewcomment input{
     display: block;
@@ -194,7 +226,11 @@ section .viewcomment input{
 section .viewcomment textarea{
     width: 80%;
     font-family: 'Indie Flower', cursive;
-    font-size: large;
+    font-size: x-large;
+    border: none;
+    background-color: #d0f4de;
+    border-radius: 5px;
+    padding: 10px;
 }
 section .viewcomment span{
     font-family: initial;
@@ -202,6 +238,7 @@ section .viewcomment span{
 }
 section .viewcomment img{
     width: 50px;
+    border-radius: 100px;
 }
 /*###############
     Publicar comentarios
@@ -233,15 +270,15 @@ section .comentarios input[type="submit"]{
 section .comentarios input[type="submit"]:hover{
     background-color: #227c9d;
 }
+/*##################
+    Pie de pagina
+ ###################*/
 footer{
     background-color: #ffb4a2;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    font-size: 30px;
-    font-family: 'Sniglet', cursive;
+    font-size:x-large;
+    font-family: 'Kalam', cursive;
     margin-top: 20px;
 }
-
-
-

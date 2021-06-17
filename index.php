@@ -20,6 +20,10 @@ require_once 'controlador/estadistica.php';
     <link href="vista/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Skranji&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Handlee&family=Skranji&display=swap" rel="stylesheet">
+    <link rel="icon" href="./vista/imagenes/icono.png"/>
     <title>Document</title>
 </head>
 <body>
