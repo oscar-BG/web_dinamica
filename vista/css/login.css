@@ -1,10 +1,20 @@
 *{
     margin: 0;
     padding: 0;
-}
-body{
+  }
+  body{
     /*background-color: #495057;*/
     background-color: #6c757d;
+  }
+.contenedor{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  display: block;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 input[type=email], select {
   width: 50%;
@@ -40,16 +50,6 @@ input[type=text], select {
   margin-right: auto;
 }
 
-.contenedor{
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  width: 50%;
-  display: block;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-}
 p{
     text-align: center;
     font-size: 30px;
@@ -92,3 +92,49 @@ button {
   }
   
   button:hover {background-color: #457b9d}
+  /* RESPONSIVE */
+@media(max-width:600px){
+  .contenedor{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 80%;
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  input[type=email], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  input[type=password], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  input[type=text], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
